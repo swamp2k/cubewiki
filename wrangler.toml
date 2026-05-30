@@ -8,5 +8,5 @@ pages_build_output_dir = "dist"
 
 [[d1_databases]]
 binding     = "CC_DB"           # name used in env.CC_DB inside the Function
-database_name = "cc-compendium-db"
-database_id   = "PASTE-YOUR-D1-ID-HERE"
+database_name = "cubewiki"
+database_id   = "bd61988a-e743-453d-805d-ba46af809045"
