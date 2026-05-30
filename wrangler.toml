@@ -1,0 +1,12 @@
+# wrangler.toml
+# Add this to your existing wrangler.toml, or create it at the repo root.
+# Replace the database_id with the one you get from `npx wrangler d1 create cc-compendium-db`
+
+name = "cc-compendium"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding     = "CC_DB"           # name used in env.CC_DB inside the Function
+database_name = "cc-compendium-db"
+database_id   = "PASTE-YOUR-D1-ID-HERE"

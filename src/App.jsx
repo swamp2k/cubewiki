@@ -54,7 +54,6 @@ const BASE_CUBES = {
 // ─── BUILT-IN RECIPE GRAPH ───────────────────────────────────────────────────
 
 const BUILT_IN_RECIPES = {
-  // ── Material Cubes (known) ──
   "Iron Cube":           { inputs: ["Iron", "White Cube"],                  category: "Material Cube", beginner: true  },
   "Gold Cube":           { inputs: ["Gold", "White Cube"],                  category: "Material Cube", beginner: true  },
   "Copper Cube":         { inputs: ["Copper", "White Cube"],                category: "Material Cube", beginner: true  },
@@ -86,7 +85,6 @@ const BUILT_IN_RECIPES = {
   "Soil Cube":           { inputs: ["Mud Cube", "Green Cube"],              category: "Material Cube", beginner: true  },
   "Nutrient Cube":       { inputs: ["Juice", "Dirt Cube"],                  category: "Material Cube", beginner: true  },
   "Coil":                { inputs: ["Forge Cube", "Copper Cube"],           category: "Material Cube", beginner: true  },
-  // ── Material Cubes (unknown recipe) ──
   "Steel Cube":          { unknown: true, category: "Material Cube", beginner: false },
   "Titanium Cube":       { unknown: true, category: "Material Cube", beginner: false },
   "Obsidian Cube":       { unknown: true, category: "Material Cube", beginner: false },
@@ -102,8 +100,6 @@ const BUILT_IN_RECIPES = {
   "Reinforced Plate Cube":{ unknown: true, category: "Material Cube", beginner: false },
   "Multi Cube":          { unknown: true, category: "Material Cube", beginner: false },
   "Alternate Cube":      { unknown: true, category: "Material Cube", beginner: false },
-
-  // ── Clubs (known) ──
   "Club":                { inputs: ["Wood Cube", "Red Cube"],               category: "Club", beginner: true  },
   "Spiked Club":         { inputs: ["Club", "Spike"],                       category: "Club", beginner: true  },
   "Reinforced Club":     { inputs: ["Club", "Forge Cube"],                  category: "Club", beginner: true  },
@@ -116,8 +112,6 @@ const BUILT_IN_RECIPES = {
   "Permafrost Club":     { inputs: ["Glacier Club", "Cryoide Cube"],        category: "Club", beginner: true  },
   "Final Club":          { inputs: ["Goldfire Club", "Cryoide Cube"],       category: "Club", beginner: true  },
   "Ancient Club":        { unknown: true, obtain: "⚗️ Combining — recipe unknown", category: "Club", beginner: false },
-
-  // ── Swords (known) ──
   "Iron Sword":          { inputs: ["Forge Cube", "Iron"],                  category: "Sword", beginner: true  },
   "Golden Sword":        { inputs: ["Iron Sword", "Gold Cube"],             category: "Sword", beginner: true  },
   "Flame Sword":         { inputs: ["Golden Sword", "Lava Cube"],           category: "Sword", beginner: true  },
@@ -137,8 +131,6 @@ const BUILT_IN_RECIPES = {
   "Iron Longsword":      { unknown: true, obtain: "📦 Starter Pack Cube exclusive",         category: "Sword", beginner: false },
   "Venomshank":          { unknown: true, obtain: "📦 Drop: Satchel (1/240), Container (1/200), Wooden Crate (1/160)", category: "Sword", beginner: false },
   "Forsaken Blade":      { unknown: true, obtain: "💀 Boss drop — event item",              category: "Sword", beginner: false },
-
-  // ── Daggers (all unknown) ──
   "Copper Dagger":       { unknown: true, obtain: "⚗️ Combining — recipe unknown",          category: "Dagger", beginner: false },
   "Iron Dagger":         { unknown: true, obtain: "⚗️ Combining — recipe unknown",          category: "Dagger", beginner: false },
   "Gold Dagger":         { unknown: true, obtain: "⚗️ Combining — recipe unknown",          category: "Dagger", beginner: false },
@@ -154,8 +146,6 @@ const BUILT_IN_RECIPES = {
   "Titanium Dagger":     { unknown: true, obtain: "⚗️ Combining — recipe unknown",          category: "Dagger", beginner: false },
   "Ancient Dagger":      { unknown: true, obtain: "⚗️ Combining — recipe unknown (requires boss drop)", category: "Dagger", beginner: false },
   "Meteorite Dagger":    { unknown: true, obtain: "❓ Source unknown",                      category: "Dagger", beginner: false },
-
-  // ── Greatswords (all unknown) ──
   "Iron Greatsword":          { unknown: true, obtain: "⚗️ Combining — recipe unknown",                    category: "Greatsword", beginner: false },
   "Hardened Iron Greatsword": { unknown: true, obtain: "💀 Drop: Kill Raider Brute",                       category: "Greatsword", beginner: false },
   "Copper Greatsword":        { unknown: true, obtain: "⚗️ Combining — recipe unknown",                    category: "Greatsword", beginner: false },
@@ -174,8 +164,6 @@ const BUILT_IN_RECIPES = {
   "Titanium Greatsword":      { unknown: true, obtain: "⚗️ Combining — recipe unknown",                    category: "Greatsword", beginner: false },
   "Ancient Greatsword":       { unknown: true, obtain: "⚗️ Combining — recipe unknown (requires boss drop)", category: "Greatsword", beginner: false },
   "Meteorite Greatsword":     { unknown: true, obtain: "❓ Source unknown",                                 category: "Greatsword", beginner: false },
-
-  // ── Spears (all unknown) ──
   "Iron Spear":          { unknown: true, obtain: "⚗️ Combining — recipe unknown",                    category: "Spear", beginner: false },
   "Copper Spear":        { unknown: true, obtain: "⚗️ Combining — recipe unknown",                    category: "Spear", beginner: false },
   "Gold Spear":          { unknown: true, obtain: "⚗️ Combining — recipe unknown",                    category: "Spear", beginner: false },
@@ -193,30 +181,22 @@ const BUILT_IN_RECIPES = {
   "Meteorite Spear":     { unknown: true, obtain: "❓ Source unknown",                                 category: "Spear", beginner: false },
   "Trident":             { unknown: true, obtain: "💀 Boss drop",                                     category: "Spear", beginner: false },
   "Abyssal Greatspear":  { unknown: true, obtain: "⚗️ Combining — recipe unknown (requires boss drop)", category: "Spear", beginner: false },
-
-  // ── Hammers (all unknown) ──
   "Sledgehammer":         { unknown: true, obtain: "⚗️ Combining — recipe unknown",                    category: "Hammer", beginner: false },
   "Warhammer":            { unknown: true, obtain: "⚗️ Combining — recipe unknown",                    category: "Hammer", beginner: false },
   "Great Hammer":         { unknown: true, obtain: "⚗️ Combining — recipe unknown (requires boss drop)", category: "Hammer", beginner: false },
   "Plated Sledgehammer":  { unknown: true, obtain: "⚗️ Combining — recipe unknown",                    category: "Hammer", beginner: false },
   "Titanium Great Hammer":{ unknown: true, obtain: "⚗️ Combining — recipe unknown (requires boss drop)", category: "Hammer", beginner: false },
   "Utility Hammer":       { unknown: true, obtain: "❓ Source unknown",                                 category: "Hammer", beginner: false },
-
-  // ── Ranged (known) ──
   "Throwable Cube":      { inputs: ["Iron", "Red Cube"],                    category: "Ranged", beginner: true  },
   "Explosive Cube":      { inputs: ["Throwable Cube", "Gunpowder Cube"],    category: "Ranged", beginner: true  },
   "Bomb Cube":           { inputs: ["Explosive Cube", "Lava Cube"],         category: "Ranged", beginner: true  },
   "Impact Cube":         { inputs: ["Explosive Cube", "Enrichment Cube"],   category: "Ranged", beginner: true  },
   "Impact Bomb Cube":    { unknown: true, obtain: "⚗️ Combining — recipe unknown", category: "Ranged", beginner: false },
-
-  // ── Caltrops (all unknown) ──
   "Caltrop":             { unknown: true, obtain: "⚗️ Combining — recipe unknown",          category: "Caltrop", beginner: false },
   "Flaming Caltrop":     { unknown: true, obtain: "⚗️ Combining — recipe unknown",          category: "Caltrop", beginner: false },
   "Rusty Caltrop":       { unknown: true, obtain: "⚗️ Combining — recipe unknown",          category: "Caltrop", beginner: false },
   "Titanium Caltrop":    { unknown: true, obtain: "⚗️ Combining — recipe unknown",          category: "Caltrop", beginner: false },
   "Icy Caltrop":         { unknown: true, obtain: "🎁 Event: Gift of Icy Sharps",           category: "Caltrop", beginner: false },
-
-  // ── Armor (known) ──
   "Iron Helmet":              { inputs: ["Helmet Cube", "Iron Cube"],        category: "Armor", beginner: true  },
   "Iron Chestplate":          { inputs: ["Chestplate Cube", "Iron Cube"],    category: "Armor", beginner: true  },
   "Iron Leggings":            { inputs: ["Leggings Cube", "Iron Cube"],      category: "Armor", beginner: true  },
@@ -245,11 +225,7 @@ const BUILT_IN_RECIPES = {
   "Steel Shield":        { unknown: true, obtain: "⚗️ Combining — recipe unknown",          category: "Armor", beginner: false },
   "Titanium Shield":     { unknown: true, obtain: "⚗️ Combining — recipe unknown",          category: "Armor", beginner: false },
   "Plated Iron Shield":  { unknown: true, obtain: "⚗️ Combining — recipe unknown",          category: "Armor", beginner: false },
-
-  // ── Healing (known) ──
   "Regen Coil":          { inputs: ["Regen Cube", "Forge Cube"],            category: "Healing", beginner: true  },
-
-  // ── Utility / Coils (known) ──
   "Container Cube":      { inputs: ["Plate Cube", "Pack Cube"],             category: "Utility", beginner: true  },
   "Backpack Cube":       { inputs: ["Container Cube", "Wealth Cube"],       category: "Utility", beginner: true  },
   "Speed Coil":          { inputs: ["Coil", "Enriched Red Cube"],           category: "Utility", beginner: true  },
@@ -282,11 +258,24 @@ const CATEGORY_META = {
   "Material Cube": { icon: "🧱", color: "#FFCC80" },
 };
 
-const ALL_CATEGORIES = ["Club","Sword","Dagger","Greatsword","Spear","Hammer","Ranged","Caltrop","Armor","Healing","Utility","Material Cube"];
+const ALL_CATEGORIES      = ["Club","Sword","Dagger","Greatsword","Spear","Hammer","Ranged","Caltrop","Armor","Healing","Utility","Material Cube"];
 const BEGINNER_CATEGORIES = ["Club","Sword","Ranged","Armor","Healing","Utility","Material Cube"];
-const STORAGE_KEY = "cc_user_recipes";
 
-// ─── HELPERS ─────────────────────────────────────────────────────────────────
+// ─── API HELPERS ─────────────────────────────────────────────────────────────
+
+async function apiFetch(path, options = {}) {
+  const res = await fetch(path, {
+    headers: { "Content-Type": "application/json" },
+    ...options,
+  });
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({}));
+    throw new Error(body.error || `HTTP ${res.status}`);
+  }
+  return res.json();
+}
+
+// ─── PURE HELPERS ────────────────────────────────────────────────────────────
 
 function isBaseIngredient(name, allRecipes) {
   return BASE_CUBES[name] !== undefined && !allRecipes[name];
@@ -295,9 +284,7 @@ function getSourceInfo(name) {
   if (BASE_CUBES[name]) return BASE_CUBES[name].source || SOURCE.CRAFT;
   return SOURCE.CRAFT;
 }
-function getNote(name) {
-  return BASE_CUBES[name]?.note || "";
-}
+function getNote(name) { return BASE_CUBES[name]?.note || ""; }
 
 function buildCraftingChain(name, allRecipes, visited = new Set()) {
   if (visited.has(name)) return [];
@@ -305,100 +292,56 @@ function buildCraftingChain(name, allRecipes, visited = new Set()) {
   const recipe = allRecipes[name];
   if (!recipe || recipe.unknown) return [];
   const steps = [];
-  for (const input of recipe.inputs) {
-    steps.push(...buildCraftingChain(input, allRecipes, visited));
-  }
+  for (const input of recipe.inputs) steps.push(...buildCraftingChain(input, allRecipes, visited));
   steps.push({ output: name, inputs: recipe.inputs, category: recipe.category });
   return steps;
 }
 
 function collectRawMaterials(name, allRecipes, memo = {}) {
   const recipe = allRecipes[name];
-  if (!recipe || recipe.unknown) {
-    memo[name] = (memo[name] || 0) + 1;
-    return memo;
-  }
+  if (!recipe || recipe.unknown) { memo[name] = (memo[name] || 0) + 1; return memo; }
   for (const input of recipe.inputs) collectRawMaterials(input, allRecipes, memo);
   return memo;
 }
 
-function loadUserRecipes() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : {};
-  } catch { return {}; }
-}
-
-function saveUserRecipes(recipes) {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(recipes)); } catch {}
-}
-
 // ─── EDIT MODAL ──────────────────────────────────────────────────────────────
 
-function EditModal({ itemName, existingRecipe, allRecipes, onSave, onClose }) {
-  const isNew = !existingRecipe;
+function EditModal({ itemName, existingRecipe, allRecipes, onSave, onClose, saving }) {
+  const isNew   = !existingRecipe || !itemName;
   const builtIn = BUILT_IN_RECIPES[itemName];
 
-  const [name, setName]         = useState(itemName || "");
-  const [input1, setInput1]     = useState(existingRecipe?.inputs?.[0] || "");
-  const [input2, setInput2]     = useState(existingRecipe?.inputs?.[1] || "");  const [category, setCategory] = useState(existingRecipe?.category || builtIn?.category || "Material Cube");
-  const [obtain, setObtain]     = useState(existingRecipe?.obtain || builtIn?.obtain || "");
-  const [error, setError]       = useState("");
+  const [name,     setName]     = useState(itemName || "");
+  const [input1,   setInput1]   = useState(existingRecipe?.inputs?.[0] || "");
+  const [input2,   setInput2]   = useState(existingRecipe?.inputs?.[1] || "");
+  const [category, setCategory] = useState(existingRecipe?.category || builtIn?.category || "Material Cube");
+  const [obtain,   setObtain]   = useState(existingRecipe?.obtain || builtIn?.obtain || "");
+  const [error,    setError]    = useState("");
 
-  // All known ingredient names for autocomplete suggestions
   const allIngredients = useMemo(() => {
-    const names = new Set([...Object.keys(BASE_CUBES), ...Object.keys(allRecipes)]);
-    return [...names].sort();
+    return [...new Set([...Object.keys(BASE_CUBES), ...Object.keys(allRecipes)])].sort();
   }, [allRecipes]);
 
   const handleSave = () => {
-    const trimName = name.trim();
-    const trimI1 = input1.trim();
-    const trimI2 = input2.trim();
-    if (!trimName) { setError("Item name is required."); return; }
-    if (!trimI1 || !trimI2) { setError("Both ingredients are required."); return; }
-    if (trimI1.toLowerCase() === trimI2.toLowerCase()) { setError("Ingredients must be different."); return; }
+    if (!name.trim())   { setError("Item name is required.");      return; }
+    if (!input1.trim()) { setError("Ingredient 1 is required.");   return; }
+    if (!input2.trim()) { setError("Ingredient 2 is required.");   return; }
+    if (input1.trim().toLowerCase() === input2.trim().toLowerCase()) {
+      setError("Ingredients must be different."); return;
+    }
     setError("");
-    onSave(trimName, { inputs: [trimI1, trimI2], category, obtain: obtain.trim(), beginner: false, userAdded: true });
+    onSave(name.trim(), input1.trim(), input2.trim(), category, obtain.trim());
   };
 
-  const inputStyle = {
-    width: "100%", padding: "8px 12px",
-    background: "rgba(255,255,255,0.06)",
-    border: "1px solid rgba(255,255,255,0.12)",
-    borderRadius: "8px", color: "#ddd",
-    fontSize: "0.85rem", outline: "none",
-    listStyle: "none",
-  };
-
-  const labelStyle = {
-    fontSize: "0.68rem", color: "#666",
-    textTransform: "uppercase", letterSpacing: "0.1em",
-    display: "block", marginBottom: "5px",
-  };
+  const inputStyle = { width: "100%", padding: "8px 12px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "8px", color: "#ddd", fontSize: "0.85rem", outline: "none" };
+  const labelStyle = { fontSize: "0.68rem", color: "#666", textTransform: "uppercase", letterSpacing: "0.1em", display: "block", marginBottom: "5px" };
 
   return (
-    <div style={{
-      position: "fixed", inset: 0, zIndex: 1000,
-      background: "rgba(0,0,0,0.7)",
-      display: "flex", alignItems: "center", justifyContent: "center",
-      padding: "16px",
-    }} onClick={onClose}>
-      <div style={{
-        background: "#13161E", borderRadius: "14px",
-        border: "1px solid rgba(255,255,255,0.1)",
-        padding: "24px", width: "100%", maxWidth: "420px",
-        boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
-      }} onClick={e => e.stopPropagation()}>
-
+    <div style={{ position: "fixed", inset: 0, zIndex: 1000, background: "rgba(0,0,0,0.7)", display: "flex", alignItems: "center", justifyContent: "center", padding: "16px" }} onClick={onClose}>
+      <div style={{ background: "#13161E", borderRadius: "14px", border: "1px solid rgba(255,255,255,0.1)", padding: "24px", width: "100%", maxWidth: "420px", boxShadow: "0 20px 60px rgba(0,0,0,0.6)" }} onClick={e => e.stopPropagation()}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "20px" }}>
           <div>
-            <div style={{ fontFamily: "'Cinzel', serif", fontWeight: 800, color: "#fff", fontSize: "1rem" }}>
-              {isNew ? "Add New Recipe" : `Edit: ${itemName}`}
-            </div>
-            <div style={{ fontSize: "0.7rem", color: "#555", marginTop: "2px" }}>
-              {isNew ? "Add a brand new item and its recipe" : "Fill in the recipe for this item"}
-            </div>
+            <div style={{ fontFamily: "'Cinzel', serif", fontWeight: 800, color: "#fff", fontSize: "1rem" }}>{isNew ? "Add New Recipe" : `Edit: ${itemName}`}</div>
+            <div style={{ fontSize: "0.7rem", color: "#555", marginTop: "2px" }}>{isNew ? "Add a brand new item and its recipe" : "Update the recipe for this item"}</div>
           </div>
           <button onClick={onClose} style={{ background: "none", border: "none", color: "#555", fontSize: "1.2rem", padding: "4px 8px" }}>✕</button>
         </div>
@@ -407,50 +350,39 @@ function EditModal({ itemName, existingRecipe, allRecipes, onSave, onClose }) {
           {isNew && (
             <div>
               <label style={labelStyle}>Item Name</label>
-              <input value={name} onChange={e => setName(e.target.value)} placeholder="e.g. Copper Greatsword" style={inputStyle} list="all-items" />
-              <datalist id="all-items">{allIngredients.map(n => <option key={n} value={n} />)}</datalist>
+              <input value={name} onChange={e => setName(e.target.value)} placeholder="e.g. Copper Greatsword" style={inputStyle} list="all-items-list" />
+              <datalist id="all-items-list">{allIngredients.map(n => <option key={n} value={n} />)}</datalist>
             </div>
           )}
-
           <div>
             <label style={labelStyle}>Category</label>
             <select value={category} onChange={e => setCategory(e.target.value)} style={{ ...inputStyle, cursor: "pointer" }}>
               {Object.keys(CATEGORY_META).map(c => <option key={c} value={c}>{CATEGORY_META[c].icon} {c}</option>)}
             </select>
           </div>
-
           <div style={{ display: "grid", gridTemplateColumns: "1fr 28px 1fr", alignItems: "center", gap: "8px" }}>
             <div>
               <label style={labelStyle}>Ingredient 1</label>
-              <input value={input1} onChange={e => setInput1(e.target.value)} placeholder="e.g. Iron Cube" style={inputStyle} list="ingredients-1" />
-              <datalist id="ingredients-1">{allIngredients.map(n => <option key={n} value={n} />)}</datalist>
+              <input value={input1} onChange={e => setInput1(e.target.value)} placeholder="e.g. Iron Cube" style={inputStyle} list="ing1-list" />
+              <datalist id="ing1-list">{allIngredients.map(n => <option key={n} value={n} />)}</datalist>
             </div>
             <div style={{ textAlign: "center", color: "#555", fontSize: "1.1rem", marginTop: "18px" }}>+</div>
             <div>
               <label style={labelStyle}>Ingredient 2</label>
-              <input value={input2} onChange={e => setInput2(e.target.value)} placeholder="e.g. Gold Cube" style={inputStyle} list="ingredients-2" />
-              <datalist id="ingredients-2">{allIngredients.map(n => <option key={n} value={n} />)}</datalist>
+              <input value={input2} onChange={e => setInput2(e.target.value)} placeholder="e.g. Gold Cube" style={inputStyle} list="ing2-list" />
+              <datalist id="ing2-list">{allIngredients.map(n => <option key={n} value={n} />)}</datalist>
             </div>
           </div>
-
           <div>
             <label style={labelStyle}>How to obtain (optional note)</label>
             <input value={obtain} onChange={e => setObtain(e.target.value)} placeholder="e.g. ⚗️ Combining" style={inputStyle} />
           </div>
-
           {error && <div style={{ fontSize: "0.8rem", color: "#EF5350", background: "rgba(239,83,80,0.08)", padding: "8px 12px", borderRadius: "8px", border: "1px solid rgba(239,83,80,0.2)" }}>{error}</div>}
-
           <div style={{ display: "flex", gap: "8px", marginTop: "4px" }}>
-            <button onClick={onClose} style={{
-              flex: 1, padding: "9px", borderRadius: "8px",
-              background: "transparent", border: "1px solid rgba(255,255,255,0.1)",
-              color: "#666", fontSize: "0.85rem",
-            }}>Cancel</button>
-            <button onClick={handleSave} style={{
-              flex: 2, padding: "9px", borderRadius: "8px",
-              background: "rgba(255,213,79,0.15)", border: "1px solid rgba(255,213,79,0.3)",
-              color: "#FFD54F", fontWeight: 700, fontSize: "0.85rem",
-            }}>Save Recipe</button>
+            <button onClick={onClose} disabled={saving} style={{ flex: 1, padding: "9px", borderRadius: "8px", background: "transparent", border: "1px solid rgba(255,255,255,0.1)", color: "#666", fontSize: "0.85rem" }}>Cancel</button>
+            <button onClick={handleSave} disabled={saving} style={{ flex: 2, padding: "9px", borderRadius: "8px", background: saving ? "rgba(255,213,79,0.06)" : "rgba(255,213,79,0.15)", border: "1px solid rgba(255,213,79,0.3)", color: saving ? "#888" : "#FFD54F", fontWeight: 700, fontSize: "0.85rem" }}>
+              {saving ? "Saving…" : "Save Recipe"}
+            </button>
           </div>
         </div>
       </div>
@@ -462,13 +394,7 @@ function EditModal({ itemName, existingRecipe, allRecipes, onSave, onClose }) {
 
 function Toggle({ label, sublabel, checked, onChange, accentColor = "#FFD54F" }) {
   return (
-    <div onClick={() => onChange(!checked)} style={{
-      display: "flex", alignItems: "center", gap: "10px", padding: "8px 12px",
-      cursor: "pointer", borderRadius: "8px",
-      background: checked ? `${accentColor}11` : "transparent",
-      border: `1px solid ${checked ? accentColor + "33" : "rgba(255,255,255,0.07)"}`,
-      transition: "all 0.2s", userSelect: "none",
-    }}>
+    <div onClick={() => onChange(!checked)} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "8px 12px", cursor: "pointer", borderRadius: "8px", background: checked ? `${accentColor}11` : "transparent", border: `1px solid ${checked ? accentColor + "33" : "rgba(255,255,255,0.07)"}`, transition: "all 0.2s", userSelect: "none" }}>
       <div style={{ width: "32px", height: "18px", borderRadius: "9px", flexShrink: 0, background: checked ? accentColor : "#333", position: "relative", transition: "background 0.2s" }}>
         <div style={{ position: "absolute", top: "3px", left: checked ? "17px" : "3px", width: "12px", height: "12px", borderRadius: "50%", background: "#fff", transition: "left 0.2s", boxShadow: "0 1px 3px rgba(0,0,0,0.4)" }} />
       </div>
@@ -486,15 +412,7 @@ function CubeBadge({ name, onClick, allRecipes }) {
   const isBase = isBaseIngredient(name, allRecipes);
   const baseColor = BASE_CUBES[name]?.color;
   return (
-    <span onClick={onClick} title={getSourceInfo(name) + (getNote(name) ? "\n" + getNote(name) : "")} style={{
-      display: "inline-flex", alignItems: "center", gap: "4px",
-      padding: "3px 10px", borderRadius: "20px",
-      fontSize: "0.78rem", fontWeight: 600, cursor: "pointer",
-      border: "1px solid rgba(255,255,255,0.15)",
-      background: isBase ? `${baseColor || "#555"}33` : "rgba(255,255,255,0.06)",
-      color: isBase ? (baseColor || "#ccc") : "#ddd",
-      transition: "all 0.15s", userSelect: "none",
-    }}>
+    <span onClick={onClick} title={getSourceInfo(name) + (getNote(name) ? "\n" + getNote(name) : "")} style={{ display: "inline-flex", alignItems: "center", gap: "4px", padding: "3px 10px", borderRadius: "20px", fontSize: "0.78rem", fontWeight: 600, cursor: "pointer", border: "1px solid rgba(255,255,255,0.15)", background: isBase ? `${baseColor || "#555"}33` : "rgba(255,255,255,0.06)", color: isBase ? (baseColor || "#ccc") : "#ddd", transition: "all 0.15s", userSelect: "none" }}>
       {isBase ? "◆" : "◇"} {name}
     </span>
   );
@@ -505,18 +423,8 @@ function CubeBadge({ name, onClick, allRecipes }) {
 function StepCard({ step, index, total, onClickIngredient, allRecipes }) {
   const isLast = index === total - 1;
   return (
-    <div style={{
-      display: "flex", alignItems: "center", gap: "12px", padding: "10px 14px", marginBottom: "6px",
-      background: isLast ? "rgba(255,213,79,0.08)" : "rgba(255,255,255,0.04)", borderRadius: "10px",
-      border: isLast ? "1px solid rgba(255,213,79,0.3)" : "1px solid rgba(255,255,255,0.07)",
-    }}>
-      <div style={{
-        minWidth: "24px", height: "24px", borderRadius: "50%",
-        background: isLast ? "#FFD54F22" : "#ffffff11",
-        border: isLast ? "1px solid #FFD54F55" : "1px solid #ffffff22",
-        display: "flex", alignItems: "center", justifyContent: "center",
-        fontSize: "0.68rem", color: isLast ? "#FFD54F" : "#888", fontWeight: 700,
-      }}>{index + 1}</div>
+    <div style={{ display: "flex", alignItems: "center", gap: "12px", padding: "10px 14px", marginBottom: "6px", background: isLast ? "rgba(255,213,79,0.08)" : "rgba(255,255,255,0.04)", borderRadius: "10px", border: isLast ? "1px solid rgba(255,213,79,0.3)" : "1px solid rgba(255,255,255,0.07)" }}>
+      <div style={{ minWidth: "24px", height: "24px", borderRadius: "50%", background: isLast ? "#FFD54F22" : "#ffffff11", border: isLast ? "1px solid #FFD54F55" : "1px solid #ffffff22", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.68rem", color: isLast ? "#FFD54F" : "#888", fontWeight: 700 }}>{index + 1}</div>
       <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: "6px", flex: 1 }}>
         {step.inputs.map((inp, i) => (
           <span key={i} style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
@@ -525,12 +433,9 @@ function StepCard({ step, index, total, onClickIngredient, allRecipes }) {
           </span>
         ))}
         <span style={{ color: "#555", margin: "0 4px" }}>→</span>
-        <span style={{
-          padding: "3px 10px", borderRadius: "20px", fontSize: "0.78rem", fontWeight: 700,
-          background: isLast ? "rgba(255,213,79,0.15)" : "rgba(255,255,255,0.08)",
-          color: isLast ? "#FFD54F" : "#fff",
-          border: isLast ? "1px solid #FFD54F55" : "1px solid rgba(255,255,255,0.15)",
-        }}>{isLast ? "✦ " : ""}{step.output}</span>
+        <span style={{ padding: "3px 10px", borderRadius: "20px", fontSize: "0.78rem", fontWeight: 700, background: isLast ? "rgba(255,213,79,0.15)" : "rgba(255,255,255,0.08)", color: isLast ? "#FFD54F" : "#fff", border: isLast ? "1px solid #FFD54F55" : "1px solid rgba(255,255,255,0.15)" }}>
+          {isLast ? "✦ " : ""}{step.output}
+        </span>
       </div>
     </div>
   );
@@ -539,18 +444,16 @@ function StepCard({ step, index, total, onClickIngredient, allRecipes }) {
 // ─── MATERIALS LIST ──────────────────────────────────────────────────────────
 
 function MaterialsList({ name, allRecipes }) {
-  const mats = collectRawMaterials(name, allRecipes);
+  const mats   = collectRawMaterials(name, allRecipes);
   const sorted = Object.entries(mats).sort((a, b) => b[1] - a[1]);
   return (
     <div style={{ marginTop: "12px" }}>
       <div style={{ fontSize: "0.7rem", letterSpacing: "0.1em", color: "#888", marginBottom: "8px", textTransform: "uppercase" }}>Raw Materials Needed</div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
         {sorted.map(([mat, count]) => (
-          <span key={mat} title={getSourceInfo(mat) + (getNote(mat) ? "\n" + getNote(mat) : "")} style={{
-            padding: "3px 10px", borderRadius: "20px", fontSize: "0.75rem", fontWeight: 600,
-            background: "rgba(255,255,255,0.06)", color: "#ccc",
-            border: "1px solid rgba(255,255,255,0.12)", cursor: "help",
-          }}>{count > 1 ? `×${count} ` : ""}{mat}</span>
+          <span key={mat} title={getSourceInfo(mat) + (getNote(mat) ? "\n" + getNote(mat) : "")} style={{ padding: "3px 10px", borderRadius: "20px", fontSize: "0.75rem", fontWeight: 600, background: "rgba(255,255,255,0.06)", color: "#ccc", border: "1px solid rgba(255,255,255,0.12)", cursor: "help" }}>
+            {count > 1 ? `×${count} ` : ""}{mat}
+          </span>
         ))}
       </div>
     </div>
@@ -559,17 +462,16 @@ function MaterialsList({ name, allRecipes }) {
 
 // ─── DETAIL PANEL ────────────────────────────────────────────────────────────
 
-function DetailPanel({ selected, allRecipes, onClickIngredient, onEdit }) {
-  const steps = useMemo(() => buildCraftingChain(selected, allRecipes), [selected, allRecipes]);
-  const recipe = allRecipes[selected];
-  const catMeta = recipe ? (CATEGORY_META[recipe.category] || {}) : {};
-  const isUnknown = recipe?.unknown && !recipe?.inputs;
-  const isBase = !recipe;
+function DetailPanel({ selected, allRecipes, onClickIngredient, onEdit, onDelete }) {
+  const steps    = useMemo(() => buildCraftingChain(selected, allRecipes), [selected, allRecipes]);
+  const recipe   = allRecipes[selected];
+  const catMeta  = recipe ? (CATEGORY_META[recipe.category] || {}) : {};
+  const isUnknown  = recipe?.unknown && !recipe?.inputs;
+  const isBase     = !recipe;
   const isUserAdded = recipe?.userAdded;
 
   return (
     <div style={{ flex: 1, overflowY: "auto", padding: "24px", minHeight: 0 }}>
-      {/* Header row */}
       <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "6px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
           <span style={{ fontSize: "1.6rem" }}>{catMeta.icon || (isBase ? "◆" : "◇")}</span>
@@ -578,20 +480,24 @@ function DetailPanel({ selected, allRecipes, onClickIngredient, onEdit }) {
             {recipe && (
               <div style={{ fontSize: "0.72rem", color: catMeta.color || "#aaa", textTransform: "uppercase", letterSpacing: "0.08em", marginTop: "2px", display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap" }}>
                 {recipe.category}
-                {isUnknown && <span style={{ color: "#F57F17", background: "#F57F1722", padding: "1px 7px", borderRadius: "10px", border: "1px solid #F57F1744" }}>❓ Recipe Unknown</span>}
+                {isUnknown   && <span style={{ color: "#F57F17", background: "#F57F1722", padding: "1px 7px", borderRadius: "10px", border: "1px solid #F57F1744" }}>❓ Recipe Unknown</span>}
                 {isUserAdded && <span style={{ color: "#AB47BC", background: "#AB47BC22", padding: "1px 7px", borderRadius: "10px", border: "1px solid #AB47BC44" }}>✏️ Your Recipe</span>}
                 {!isUnknown && !isBase && recipe.beginner && <span style={{ color: "#66BB6A", background: "#66BB6A22", padding: "1px 7px", borderRadius: "10px", border: "1px solid #66BB6A44" }}>⭐ Beginner</span>}
               </div>
             )}
           </div>
         </div>
-        {/* Edit button — shown on all items except raw base materials */}
         {!isBase && (
-          <button onClick={() => onEdit(selected, recipe)} style={{
-            padding: "6px 14px", borderRadius: "8px", flexShrink: 0,
-            background: "rgba(255,213,79,0.1)", border: "1px solid rgba(255,213,79,0.25)",
-            color: "#FFD54F", fontSize: "0.78rem", fontWeight: 600,
-          }}>✏️ {isUnknown && !isUserAdded ? "Add Recipe" : "Edit"}</button>
+          <div style={{ display: "flex", gap: "6px", flexShrink: 0 }}>
+            <button onClick={() => onEdit(selected, recipe)} style={{ padding: "6px 14px", borderRadius: "8px", background: "rgba(255,213,79,0.1)", border: "1px solid rgba(255,213,79,0.25)", color: "#FFD54F", fontSize: "0.78rem", fontWeight: 600 }}>
+              ✏️ {isUnknown && !isUserAdded ? "Add Recipe" : "Edit"}
+            </button>
+            {isUserAdded && (
+              <button onClick={() => onDelete(selected)} style={{ padding: "6px 10px", borderRadius: "8px", background: "rgba(239,83,80,0.08)", border: "1px solid rgba(239,83,80,0.2)", color: "#EF5350", fontSize: "0.78rem" }}>
+                🗑
+              </button>
+            )}
+          </div>
         )}
       </div>
 
@@ -636,15 +542,25 @@ function DetailPanel({ selected, allRecipes, onClickIngredient, onEdit }) {
 // ─── MAIN APP ────────────────────────────────────────────────────────────────
 
 export default function App() {
-  const [selected, setSelected]     = useState("Iron Chestplate");
-  const [activeCategory, setActiveCategory] = useState("All");
-  const [search, setSearch]         = useState("");
-  const [beginnerMode, setBeginnerMode] = useState(true);
-  const [hideUnknown, setHideUnknown]   = useState(true);
-  const [userRecipes, setUserRecipes]   = useState(() => loadUserRecipes());
-  const [editModal, setEditModal]       = useState(null); // null | { name, recipe }
+  const [selected, setSelected]               = useState("Iron Chestplate");
+  const [activeCategory, setActiveCategory]   = useState("All");
+  const [search, setSearch]                   = useState("");
+  const [beginnerMode, setBeginnerMode]       = useState(true);
+  const [hideUnknown, setHideUnknown]         = useState(true);
+  const [userRecipes, setUserRecipes]         = useState({});
+  const [editModal, setEditModal]             = useState(null);
+  const [loadState, setLoadState]             = useState("loading"); // "loading" | "ok" | "error"
+  const [saving, setSaving]                   = useState(false);
+  const [saveError, setSaveError]             = useState("");
 
-  // Merge built-in + user recipes, user recipes win on conflict
+  // ── Load user recipes from D1 on mount ──
+  useEffect(() => {
+    apiFetch("/api/recipes")
+      .then(data => { setUserRecipes(data); setLoadState("ok"); })
+      .catch(() => setLoadState("error"));
+  }, []);
+
+  // Merge built-in + user recipes; user recipes win on conflict
   const allRecipes = useMemo(() => ({ ...BUILT_IN_RECIPES, ...userRecipes }), [userRecipes]);
 
   const visibleCategories = beginnerMode ? BEGINNER_CATEGORIES : ALL_CATEGORIES;
@@ -658,13 +574,11 @@ export default function App() {
       .map(([name, r]) => ({ name, ...r }));
   }, [allRecipes, beginnerMode, hideUnknown, visibleCategories.join()]);
 
-  const filtered = useMemo(() => {
-    return allItems.filter(item => {
-      const catMatch = activeCategory === "All" || item.category === activeCategory;
-      const searchMatch = !search || item.name.toLowerCase().includes(search.toLowerCase());
-      return catMatch && searchMatch;
-    });
-  }, [allItems, search, activeCategory]);
+  const filtered = useMemo(() => allItems.filter(item => {
+    const catMatch    = activeCategory === "All" || item.category === activeCategory;
+    const searchMatch = !search || item.name.toLowerCase().includes(search.toLowerCase());
+    return catMatch && searchMatch;
+  }), [allItems, search, activeCategory]);
 
   const groupedFiltered = useMemo(() => {
     const groups = {};
@@ -675,35 +589,46 @@ export default function App() {
     return groups;
   }, [filtered]);
 
-  const totalCount = allItems.length;
-  const unknownCount = Object.values(allRecipes).filter(r =>
-    visibleCategories.includes(r.category) && r.unknown && !r.inputs
-  ).length;
-  const userCount = Object.keys(userRecipes).length;
+  const unknownCount = Object.values(allRecipes).filter(r => visibleCategories.includes(r.category) && r.unknown && !r.inputs).length;
+  const userCount    = Object.keys(userRecipes).length;
 
-  const handleSaveRecipe = useCallback((name, recipeData) => {
-    const updated = { ...userRecipes, [name]: recipeData };
-    setUserRecipes(updated);
-    saveUserRecipes(updated);
-    setEditModal(null);
-    setSelected(name);
-  }, [userRecipes]);
+  // ── Save recipe to D1 ──
+  const handleSaveRecipe = useCallback(async (name, input1, input2, category, obtain) => {
+    setSaving(true);
+    setSaveError("");
+    try {
+      await apiFetch("/api/recipes", {
+        method: "POST",
+        body: JSON.stringify({ name, input1, input2, category, obtain }),
+      });
+      // Optimistic update — shape into the same format GET returns
+      setUserRecipes(prev => ({
+        ...prev,
+        [name]: { inputs: [input1, input2], category, obtain: obtain || undefined, beginner: false, userAdded: true },
+      }));
+      setEditModal(null);
+      setSelected(name);
+    } catch (e) {
+      setSaveError(e.message);
+    } finally {
+      setSaving(false);
+    }
+  }, []);
 
-  const handleDeleteUserRecipe = useCallback((name) => {
-    const updated = { ...userRecipes };
-    delete updated[name];
-    setUserRecipes(updated);
-    saveUserRecipes(updated);
-    // If we deleted the selected item's user override and a built-in exists, stay on it
-    // Otherwise select something safe
-    if (!BUILT_IN_RECIPES[name]) setSelected("Iron Chestplate");
-  }, [userRecipes]);
+  // ── Delete user recipe from D1 ──
+  const handleDeleteRecipe = useCallback(async (name) => {
+    try {
+      await apiFetch(`/api/recipes/${encodeURIComponent(name)}`, { method: "DELETE" });
+      setUserRecipes(prev => { const n = { ...prev }; delete n[name]; return n; });
+      if (!BUILT_IN_RECIPES[name]) setSelected("Iron Chestplate");
+    } catch (e) {
+      alert(`Delete failed: ${e.message}`);
+    }
+  }, []);
 
   const handleIngredientClick = (name) => {
     if (allRecipes[name] || BASE_CUBES[name]) {
-      setSelected(name);
-      setActiveCategory("All");
-      setSearch("");
+      setSelected(name); setActiveCategory("All"); setSearch("");
     }
   };
 
@@ -719,15 +644,21 @@ export default function App() {
         input, select { color-scheme: dark; }
       `}</style>
 
-      {/* Edit modal */}
       {editModal && (
         <EditModal
           itemName={editModal.name}
           existingRecipe={editModal.recipe}
           allRecipes={allRecipes}
           onSave={handleSaveRecipe}
-          onClose={() => setEditModal(null)}
+          onClose={() => { setEditModal(null); setSaveError(""); }}
+          saving={saving}
         />
+      )}
+      {saveError && (
+        <div style={{ position: "fixed", bottom: "20px", right: "20px", zIndex: 2000, background: "#1E1218", border: "1px solid rgba(239,83,80,0.4)", borderRadius: "10px", padding: "12px 16px", color: "#EF5350", fontSize: "0.85rem", maxWidth: "320px" }}>
+          ⚠️ Save failed: {saveError}
+          <button onClick={() => setSaveError("")} style={{ marginLeft: "10px", background: "none", border: "none", color: "#EF5350", cursor: "pointer" }}>✕</button>
+        </div>
       )}
 
       {/* Header */}
@@ -737,17 +668,20 @@ export default function App() {
             <span style={{ fontSize: "1.4rem" }}>🎮</span>
             <div>
               <div style={{ fontFamily: "'Cinzel', serif", fontSize: "1.1rem", fontWeight: 900, color: "#fff", letterSpacing: "0.04em" }}>CUBE COMBINATION</div>
-              <div style={{ fontSize: "0.62rem", color: "#555", letterSpacing: "0.15em", textTransform: "uppercase" }}>Crafting Compendium</div>
+              <div style={{ fontSize: "0.62rem", color: "#555", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+                Crafting Compendium
+                {loadState === "loading" && <span style={{ marginLeft: "8px", color: "#F57F17" }}>● syncing…</span>}
+                {loadState === "error"   && <span style={{ marginLeft: "8px", color: "#EF5350" }}>● offline</span>}
+                {loadState === "ok"      && userCount > 0 && <span style={{ marginLeft: "8px", color: "#66BB6A" }}>● {userCount} custom recipe{userCount !== 1 ? "s" : ""}</span>}
+              </div>
             </div>
           </div>
           <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", alignItems: "center" }}>
-            <Toggle label="Beginner Mode" sublabel="Iron & Pyrolite tier only" checked={beginnerMode} onChange={(v) => { setBeginnerMode(v); setActiveCategory("All"); }} accentColor="#66BB6A" />
+            <Toggle label="Beginner Mode" sublabel="Iron & Pyrolite tier only" checked={beginnerMode} onChange={v => { setBeginnerMode(v); setActiveCategory("All"); }} accentColor="#66BB6A" />
             <Toggle label="Hide Unknown Recipes" sublabel={`${unknownCount} items hidden`} checked={hideUnknown} onChange={setHideUnknown} accentColor="#FFD54F" />
-            <button onClick={() => setEditModal({ name: "", recipe: null })} style={{
-              padding: "8px 14px", borderRadius: "8px",
-              background: "rgba(171,71,188,0.12)", border: "1px solid rgba(171,71,188,0.3)",
-              color: "#CE93D8", fontSize: "0.75rem", fontWeight: 700,
-            }}>+ Add Recipe{userCount > 0 ? ` (${userCount})` : ""}</button>
+            <button onClick={() => setEditModal({ name: "", recipe: null })} style={{ padding: "8px 14px", borderRadius: "8px", background: "rgba(171,71,188,0.12)", border: "1px solid rgba(171,71,188,0.3)", color: "#CE93D8", fontSize: "0.75rem", fontWeight: 700 }}>
+              + Add Recipe
+            </button>
           </div>
         </div>
       </div>
@@ -756,54 +690,47 @@ export default function App() {
         {/* Sidebar */}
         <div style={{ width: "230px", flexShrink: 0, background: "#080A0F", borderRight: "1px solid rgba(255,255,255,0.07)", display: "flex", flexDirection: "column", overflow: "hidden" }}>
           <div style={{ padding: "10px 10px 6px" }}>
-            <input value={search} onChange={e => setSearch(e.target.value)} placeholder={`Search ${totalCount} items…`}
+            <input value={search} onChange={e => setSearch(e.target.value)} placeholder={`Search ${allItems.length} items…`}
               style={{ width: "100%", padding: "7px 12px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "8px", color: "#ddd", fontSize: "0.8rem", outline: "none" }} />
           </div>
           <div style={{ padding: "0 8px 8px", display: "flex", flexWrap: "wrap", gap: "3px" }}>
             {categories.map(cat => {
               const meta = CATEGORY_META[cat] || {};
               return (
-                <button key={cat} onClick={() => setActiveCategory(cat)} style={{
-                  padding: "3px 8px", borderRadius: "12px", border: "1px solid rgba(255,255,255,0.1)",
-                  background: activeCategory === cat ? (meta.color ? meta.color + "22" : "rgba(255,255,255,0.1)") : "transparent",
-                  color: activeCategory === cat ? (meta.color || "#fff") : "#555",
-                  fontSize: "0.68rem", fontWeight: activeCategory === cat ? 700 : 400,
-                }}>{meta.icon || ""} {cat}</button>
+                <button key={cat} onClick={() => setActiveCategory(cat)} style={{ padding: "3px 8px", borderRadius: "12px", border: "1px solid rgba(255,255,255,0.1)", background: activeCategory === cat ? (meta.color ? meta.color + "22" : "rgba(255,255,255,0.1)") : "transparent", color: activeCategory === cat ? (meta.color || "#fff") : "#555", fontSize: "0.68rem", fontWeight: activeCategory === cat ? 700 : 400 }}>
+                  {meta.icon || ""} {cat}
+                </button>
               );
             })}
           </div>
           <div style={{ flex: 1, overflowY: "auto", padding: "0 8px 12px" }}>
-            {Object.entries(groupedFiltered).map(([cat, names]) => (
-              <div key={cat}>
-                <div style={{ fontSize: "0.6rem", color: "#444", textTransform: "uppercase", letterSpacing: "0.12em", padding: "8px 6px 4px" }}>
-                  {CATEGORY_META[cat]?.icon} {cat}
-                </div>
-                {names.map(name => {
-                  const r = allRecipes[name];
-                  const isUnk = r?.unknown && !r?.inputs;
-                  const isUser = r?.userAdded;
-                  return (
-                    <div key={name} onClick={() => setSelected(name)} style={{
-                      padding: "6px 10px", borderRadius: "7px", cursor: "pointer", fontSize: "0.8rem",
-                      fontWeight: selected === name ? 700 : 400,
-                      color: selected === name ? "#fff" : isUnk ? "#555" : "#888",
-                      background: selected === name ? "rgba(255,213,79,0.08)" : "transparent",
-                      border: selected === name ? "1px solid rgba(255,213,79,0.2)" : "1px solid transparent",
-                      marginBottom: "1px", transition: "all 0.1s",
-                      display: "flex", alignItems: "center", justifyContent: "space-between",
-                    }}>
-                      <span>{name}</span>
-                      <span style={{ display: "flex", gap: "3px" }}>
-                        {isUser && <span style={{ fontSize: "0.55rem", color: "#AB47BC" }}>✏️</span>}
-                        {isUnk && <span style={{ fontSize: "0.6rem", color: "#F57F17", opacity: 0.7 }}>❓</span>}
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
-            ))}
-            {Object.keys(groupedFiltered).length === 0 && (
-              <div style={{ padding: "20px 10px", textAlign: "center", color: "#444", fontSize: "0.8rem" }}>No items match</div>
+            {loadState === "loading" ? (
+              <div style={{ padding: "20px 10px", textAlign: "center", color: "#444", fontSize: "0.8rem" }}>Loading recipes…</div>
+            ) : (
+              <>
+                {Object.entries(groupedFiltered).map(([cat, names]) => (
+                  <div key={cat}>
+                    <div style={{ fontSize: "0.6rem", color: "#444", textTransform: "uppercase", letterSpacing: "0.12em", padding: "8px 6px 4px" }}>{CATEGORY_META[cat]?.icon} {cat}</div>
+                    {names.map(name => {
+                      const r = allRecipes[name];
+                      const isUnk  = r?.unknown && !r?.inputs;
+                      const isUser = r?.userAdded;
+                      return (
+                        <div key={name} onClick={() => setSelected(name)} style={{ padding: "6px 10px", borderRadius: "7px", cursor: "pointer", fontSize: "0.8rem", fontWeight: selected === name ? 700 : 400, color: selected === name ? "#fff" : isUnk ? "#555" : "#888", background: selected === name ? "rgba(255,213,79,0.08)" : "transparent", border: selected === name ? "1px solid rgba(255,213,79,0.2)" : "1px solid transparent", marginBottom: "1px", transition: "all 0.1s", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                          <span>{name}</span>
+                          <span style={{ display: "flex", gap: "3px" }}>
+                            {isUser && <span style={{ fontSize: "0.55rem", color: "#AB47BC" }}>✏️</span>}
+                            {isUnk  && <span style={{ fontSize: "0.6rem",  color: "#F57F17", opacity: 0.7 }}>❓</span>}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                ))}
+                {Object.keys(groupedFiltered).length === 0 && (
+                  <div style={{ padding: "20px 10px", textAlign: "center", color: "#444", fontSize: "0.8rem" }}>No items match</div>
+                )}
+              </>
             )}
           </div>
         </div>
@@ -811,16 +738,9 @@ export default function App() {
         {/* Detail panel */}
         <div style={{ flex: 1, overflow: "hidden", display: "flex", flexDirection: "column" }}>
           {selected ? (
-            <DetailPanel
-              selected={selected}
-              allRecipes={allRecipes}
-              onClickIngredient={handleIngredientClick}
-              onEdit={(name, recipe) => setEditModal({ name, recipe })}
-            />
+            <DetailPanel selected={selected} allRecipes={allRecipes} onClickIngredient={handleIngredientClick} onEdit={(name, recipe) => { setSaveError(""); setEditModal({ name, recipe }); }} onDelete={handleDeleteRecipe} />
           ) : (
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", flex: 1, color: "#444", fontSize: "0.9rem" }}>
-              Select an item to see its crafting chain
-            </div>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", flex: 1, color: "#444", fontSize: "0.9rem" }}>Select an item to see its crafting chain</div>
           )}
         </div>
       </div>
